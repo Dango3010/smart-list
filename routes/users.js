@@ -8,7 +8,7 @@
 
 const express = require('express');
 const router  = express.Router();
-const deleteTask = require('../db/queries/delete-task');
+// const deleteTask = require('../db/queries/delete-task');
 
 //set cookie
 router.get('/', (req, res) => {
@@ -18,15 +18,15 @@ router.get('/', (req, res) => {
   res.redirect('/');
 });
 
-// delete user task
-router.post('/:id/delete', (req, res) => {
+// // delete user task
+// router.post('/:id/delete', (req, res) => {
 
-  deleteTask(req.params.id)
+//   deleteTask(req.params.id)
 
-  .catch(e => {
-    console.error(e);
-  });
-});
+//   .catch(e => {
+//     console.error(e);
+//   });
+// });
 
 
 
