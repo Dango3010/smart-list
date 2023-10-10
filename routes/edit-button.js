@@ -1,7 +1,5 @@
 const express = require('express');
 const router  = express.Router(); //= the app variable we often use
-const use = require('../db/queries/add-new-book');
-
 
 router.get('/:category', (req, res) => {
   console.log('category:', req.params.id);
