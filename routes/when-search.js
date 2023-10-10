@@ -21,14 +21,14 @@ router.post('/', async (req, res) => {
 
   // API for restaurant
   if(resFoodApi) {
-    arrQuery.push(`1989-06-06`,`${user_input}`, 4, '2022-06-06'); //for restaurant list, restaurant category has an id of 4
+    arrQuery.push(`${user_input}`, 4); //for restaurant list, restaurant category has an id of 4
     NewRow2(arrQuery); //NewRow2 is returning a promise with result.rows. We can .then() or await it to get result.rows array to use in other funcs. But if we wanna run the query inside it only, we can just call it and don't have to .then() or await
     nameList.push('a new row belonging to restaurant list has been added');
   };
 
   // API for shopping
   if(resShopApi) {
-    arrQuery.push(`1989-06-06`,`${user_input}`, 3, '2022-06-06'); //for product list, product category has an id of 3
+    arrQuery.push(`${user_input}`, 3); //for product list, product category has an id of 3
     NewRow2(arrQuery);
     nameList.push('a new row belonging to product list has been added');
   };
@@ -42,7 +42,7 @@ router.post('/', async (req, res) => {
 
   //API for movies
   if(resMovieApi) {
-    arrQuery.push(`1989-06-06`,`${user_input}`, 1, '2022-06-06'); //for movie list, movie category has an id of 1
+    arrQuery.push(`${user_input}`, 1); //for movie list, movie category has an id of 1
     NewRow2(arrQuery);
     nameList.push('a new row belonging to Movie list has been added');
   }

@@ -47,7 +47,6 @@ app.use('/users', usersRoutes);
 app.use('/category/:id/edit', toEdit); //link to the to-read category server file
 app.use('/users/search', toSearch); //link to the searching button server file
 app.use('/category', toCategory); //link to a category page for any list button
-// app.use('/api/tasks', deleteRoute);
 // Note: mount other resources here, using the same pattern above
 
 // Home page

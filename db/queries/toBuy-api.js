@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 //for Shopping category:
-//user_input that returns a success response to show off: 'running sneakers'
+//user_input that returns a success response to show off: 'running-sneakers'
 ////user_input that returns a success response to show off in both book and product lists: 'men shoes'
 //user_input that returns an error: anything meaingless like 'lsdfjldfs', or 'drill tools'
 

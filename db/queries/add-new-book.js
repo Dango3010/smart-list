@@ -26,12 +26,12 @@ async function newBook(input) {
 const NewRow = async (func, input) => {
   let obj2 = await func; //ob2 = { title: 'Harry Potter and the Deathly Hallows', pubYear: 2007}
   let arrQuery = [];
-  arrQuery.push(`${obj2.pubYear}-06-06`,`${input}`, 2, '2022-06-06'); //for Book list, Book category has an id of 2
+  arrQuery.push(`${input}`, 2); //for Book list, Book category has an id of 2
 
   return db
     .query(`
-      INSERT INTO tasks (start_date, name, category_id, end_date)
-      VALUES ($1, $2, $3, $4)
+      INSERT INTO tasks (name, category_id)
+      VALUES ($1, $2)
       RETURNING *;
       `,
       arrQuery)

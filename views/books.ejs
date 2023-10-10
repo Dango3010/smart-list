@@ -22,16 +22,14 @@
 
 <tbody>
   <%- include('partials/header') %>
-  <main style="margin: 1em;">
+  <main style="margin: 1em; font-size: 21px;">
     <h3>My Books</h3>
     <table class="table">
       <thead>
         <tr>
           <th scope="col">Name</th>
-          <th scope="col">Start date</th>
-          <th scope="col">End date</th>
-          <th scope="col">Edit</th>
-          <th scope="col">Delete</th>
+          <th scope="col" style="padding-left: 30px;">Edit</th>
+          <th scope="col" style="padding-left: 30px;">Delete</th>
         </tr>
 
 
@@ -41,18 +39,12 @@
             <td>
               <%= task.name %>
             </td>
-            <td>
-              <%= task.start_date %>
-            </td>
-            <td>
-              <%= task.end_date %>
-            </td>
-            <td>
+            <td style="padding-left: 30px;">
               <form action="/<%= task.id %>/edit-button">
                 <input type="submit" class="btn btn-default" value="Edit" />
               </form>
             </td>
-            <td>
+            <td style="padding-left: 30px;">
               <form method="POST" action="/category/<%= task.id %>/delete"><input type="submit" class="btn btn-default"
                   value="Delete" /></form>
             </td>
