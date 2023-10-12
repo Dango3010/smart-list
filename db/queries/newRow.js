@@ -10,7 +10,7 @@ const newRow = (arr) => {
       `,
       arr)
     .then(result => {
-        console.log('result.rows:',result.rows);
+        console.log('new row added:',result.rows);
         return result.rows;
       })
     .catch(err => console.log('newRow func error:', err.message));

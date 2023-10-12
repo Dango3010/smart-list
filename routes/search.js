@@ -1,7 +1,7 @@
 const express = require('express');
 const router  = express.Router();
-const newRow = require('../db/queries/newRow');
 
+const newRow = require('../db/queries/newRow');
 const movieAPI = require('../db/queries/toWatch');
 const bookAPI = require('../db/queries/toRead');
 const shopAPI = require('../db/queries/toBuy');
@@ -13,10 +13,11 @@ router.post('/', async (req, res) => {
   let newRowMessage = [];
 
   //responses of all API calls; success or undefined
-  const resMovieAPI = await movieAPI(userInput);
-  const resBookAPI = await bookAPI(userInput);
-  const resShopAPI = await shopAPI(userInput);
-  const resFoodAPI = await foodAPI(userInput);
+  const promise1 = movieAPI(userInput);
+  const promise2 = bookAPI(userInput);
+  const promise3 = shopAPI(userInput);
+  const promise4 = foodAPI(userInput);
+  const [resMovieAPI, resBookAPI, resShopAPI, resFoodAPI] = await Promise.all([promise1, promise2, promise3, promise4]);
 
   if(resMovieAPI) {
     let arrQuery = [];
